@@ -1,0 +1,2 @@
+import type { StructureResolver } from 'sanity/structure';
+export const deskStructure: StructureResolver = (S) => S.list().title('Inhalte').items([S.listItem().title('Website-Einstellungen').child(S.document().schemaType('siteSettings').documentId('siteSettings')), S.divider(), S.documentTypeListItem('event').title('Veranstaltungen'), S.documentTypeListItem('person').title('Vorstand'), S.documentTypeListItem('pressArticle').title('Presseartikel'), S.documentTypeListItem('page').title('Seiten')]);

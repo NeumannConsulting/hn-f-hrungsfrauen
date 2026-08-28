@@ -1,0 +1,1 @@
+import type {PressArticle} from '@/lib/types'; export const press:PressArticle[]=[{_id:'press-1',title:'Pressebeiträge der Führungsfrauen',slug:'pressebeitraege',date:'2025-01-01',medium:'Archiv',excerpt:'Die konkrete Quellen- und Linkpflege wird mit dem CMS ergänzt.'}];

@@ -1,0 +1,1 @@
+import type {SiteSettings} from '@/lib/types'; export const settings:SiteSettings={siteName:'Führungsfrauen Raum Heilbronn e.V.',email:'info@fuehrungsfrauen-hn.de',instagram:'https://www.instagram.com/fuehrungsfrauen_hn/',linkedin:'https://www.linkedin.com/',donationUrl:'https://www.betterplace.org/',footerText:'Frauen in Führung. Gemeinsam sichtbar.'};

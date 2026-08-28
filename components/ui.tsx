@@ -1,0 +1,3 @@
+import Link from 'next/link'; import {ArrowUpRight} from 'lucide-react';
+export function Button({href,children,alt=false}:{href:string;children:React.ReactNode;alt?:boolean}){return <Link href={href} className={`btn ${alt?'alt':''}`}>{children}<ArrowUpRight size={17}/></Link>}
+export function PageHero({eyebrow,title,text}:{eyebrow:string;title:string;text:string}){return <section className="page-hero"><div className="container grid gap-8 md:grid-cols-[1.25fr_.75fr] md:items-end"><div><p className="eyebrow mb-6">{eyebrow}</p><h1 className="h1">{title}</h1></div><p className="lead max-w-xl">{text}</p></div></section>}

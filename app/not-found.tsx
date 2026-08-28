@@ -1,0 +1,1 @@
+import Link from 'next/link'; export default function NotFound(){return <section className="container py-32"><p className="eyebrow">404</p><h1 className="h1 mt-5">Diese Seite gibt es nicht.</h1><Link href="/" className="btn mt-9">Zur Startseite</Link></section>}

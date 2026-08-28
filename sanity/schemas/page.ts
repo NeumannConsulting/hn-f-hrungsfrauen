@@ -1,0 +1,2 @@
+import { defineField, defineType } from 'sanity';
+export const page = defineType({ name: 'page', title: 'Seite', type: 'document', fields: [defineField({ name: 'title', title: 'Titel', type: 'string', validation: (Rule) => Rule.required() }), defineField({ name: 'slug', title: 'Slug', type: 'slug', options: { source: 'title', maxLength: 96 }, validation: (Rule) => Rule.required() }), defineField({ name: 'seoTitle', title: 'SEO-Titel', type: 'string' }), defineField({ name: 'seoDescription', title: 'SEO-Beschreibung', type: 'text', rows: 3 })] });
