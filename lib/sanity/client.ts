@@ -10,4 +10,5 @@ export const client = createClient({
   dataset: dataset || 'missing-dataset',
   apiVersion: '2026-08-28',
   useCdn: true,
+  perspective: 'published',
 });

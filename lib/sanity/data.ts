@@ -9,9 +9,13 @@ import { eventBySlugQuery, eventsQuery, peopleQuery, pressBySlugQuery, pressQuer
 async function read<T>(query: string, fallback: T, params?: Record<string, string>): Promise<T> {
   if (!sanityConfigured) return fallback;
   try {
-    const result = params ? await client.fetch<T>(query, params) : await client.fetch<T>(query);
+    const options = { next: { revalidate: 60 } };
+    const result = params ? await client.fetch<T>(query, params, options) : await client.fetch<T>(query, {}, options);
     return result ?? fallback;
-  } catch { return fallback; }
+  } catch (error) {
+    console.error('[Sanity] Published-content query failed.', error);
+    return fallback;
+  }
 }
 
 export const getSiteSettings = () => read<SiteSettings>(siteSettingsQuery, mockSettings);
