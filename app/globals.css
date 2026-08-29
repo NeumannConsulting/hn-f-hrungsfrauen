@@ -31,9 +31,9 @@ button { font: inherit; }
 
 main > section:not(.hero):not(.page-hero) { padding-block: clamp(4.5rem, 8vw, 8.5rem); }
 .page-hero { border-bottom: 1px solid var(--line); padding-block: clamp(3rem, 6vw, 5rem); }
-.page-hero-grid { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr); min-height: min(720px, calc(100svh - 76px)); }
+.page-hero-grid { display: grid; align-items: center; gap: 2rem; grid-template-columns: minmax(0, 1fr); min-height: min(800px, calc(100svh - 76px)); }
 .page-hero-content { display: flex; flex-direction: column; justify-content: center; }
-.page-hero-art { position: relative; min-height: 440px; overflow: hidden; border-radius: 0 0 0 120px; background: var(--ink); }
+.page-hero-art { position: relative; height: min(780px, calc(100svh - 180px)); min-height: 440px; overflow: hidden; border-radius: 0 0 0 120px; background: var(--ink); }
 .page-hero-art::before { position: absolute; inset: -25% -5% auto auto; width: 95%; aspect-ratio: 1; border-radius: 50%; background: var(--cyan); content: ''; }
 .page-hero-art::after { position: absolute; right: -20%; bottom: -42%; width: 105%; aspect-ratio: 1; border-radius: 50%; background: var(--pink); content: ''; }
 .page-hero-art.has-image::before, .page-hero-art.has-image::after { display: none; }
@@ -131,7 +131,7 @@ main > section:not(.hero):not(.page-hero) { padding-block: clamp(4.5rem, 8vw, 8.
   .hero { min-height: auto; }
   .hero-art { min-height: 390px; border-radius: 0 0 0 80px; }
   .page-hero-grid { min-height: auto; }
-  .page-hero-art { min-height: 390px; border-radius: 0 0 0 80px; }
+  .page-hero-art { height: auto; min-height: 390px; border-radius: 0 0 0 80px; }
   .event { grid-template-columns: 1fr; gap: 14px; }
   .event .btn { justify-self: start; }
   .person-photo { height: 190px; }
