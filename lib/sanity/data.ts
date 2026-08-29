@@ -9,7 +9,7 @@ import { eventBySlugQuery, eventsQuery, peopleQuery, pressBySlugQuery, pressQuer
 async function read<T>(query: string, fallback: T, params?: Record<string, string>): Promise<T> {
   if (!sanityConfigured) return fallback;
   try {
-    const options = { next: { revalidate: 60 } };
+    const options = { next: { revalidate: 60 }, timeout: 5000 };
     const result = params ? await client.fetch<T>(query, params, options) : await client.fetch<T>(query, {}, options);
     return result ?? fallback;
   } catch (error) {
