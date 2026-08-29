@@ -9,6 +9,8 @@ const editablePages = [
   ['Presse', 'page-presse'],
   ['Spenden', 'page-spenden'],
   ['Kontakt', 'page-kontakt'],
+  ['Impressum', 'page-impressum'],
+  ['Datenschutz', 'page-datenschutz'],
 ] as const;
 
 export const deskStructure: StructureResolver = (S) => S.list().title('Inhalte').items([
