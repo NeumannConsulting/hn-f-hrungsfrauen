@@ -1,4 +1,51 @@
-import type {Metadata} from 'next'; import './globals.css'; import {Header} from '@/components/layout/Header'; import {Footer} from '@/components/layout/Footer'; import {getSiteSettings} from '@/lib/sanity/data';
-export const metadata:Metadata={metadataBase:new URL('https://fuehrungsfrauen-hn.de'),title:{default:'Führungsfrauen Raum Heilbronn e.V.',template:'%s | Führungsfrauen Raum Heilbronn'},description:'Das professionelle Netzwerk für Frauen in Führung im Raum Heilbronn.',openGraph:{type:'website',locale:'de_DE',siteName:'Führungsfrauen Raum Heilbronn e.V.'}};
+import type { Metadata } from 'next';
+import './globals.css';
+
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { getSiteSettings } from '@/lib/sanity/data';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://fuehrungsfrauen-hn.de'),
+
+  title: {
+    default: 'Führungsfrauen Raum Heilbronn e.V.',
+    template: '%s | Führungsfrauen Raum Heilbronn',
+  },
+
+  description:
+    'Das professionelle Netzwerk für Frauen in Führung im Raum Heilbronn.',
+
+  robots: {
+    index: false,
+    follow: false,
+  },
+
+  openGraph: {
+    type: 'website',
+    locale: 'de_DE',
+    siteName: 'Führungsfrauen Raum Heilbronn e.V.',
+  },
+};
+
 export const revalidate = 60;
-export default async function RootLayout({children}:{children:React.ReactNode}){const settings=await getSiteSettings();return <html lang="de"><body><Header/><main>{children}</main><Footer settings={settings}/></body></html>}
+
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const settings = await getSiteSettings();
+
+  return (
+    <html lang="de">
+      <body>
+        <Header />
+
+        <main>{children}</main>
+
+        <Footer settings={settings} />
+      </body>
+    </html>
+  );
+}
