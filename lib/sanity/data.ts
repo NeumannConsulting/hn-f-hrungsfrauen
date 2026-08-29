@@ -22,6 +22,6 @@ export const getSiteSettings = () => read<SiteSettings>(siteSettingsQuery, mockS
 export const getEvents = () => read<Event[]>(eventsQuery, mockEvents);
 export const getPeople = () => read<Person[]>(peopleQuery, mockPeople);
 export const getPressArticles = () => read<PressArticle[]>(pressQuery, mockPress);
-export const getPageContent = (slug: string) => read<Page | null>(pageBySlugQuery, null, { slug });
+export const getPageContent = (slug: string) => read<Page | null>(pageBySlugQuery, null, { id: `page-${slug}` });
 export const getEventBySlug = async (slug: string) => (await read<Event | null>(eventBySlugQuery, null, { slug })) ?? mockEvents.find((event) => event.slug === slug) ?? null;
 export const getPressBySlug = async (slug: string) => (await read<PressArticle | null>(pressBySlugQuery, null, { slug })) ?? mockPress.find((article) => article.slug === slug) ?? null;
