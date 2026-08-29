@@ -40,7 +40,7 @@ export default async function RootLayout({
   return (
     <html lang="de">
       <body>
-        <Header />
+        <Header settings={settings} />
 
         <main>{children}</main>
 
